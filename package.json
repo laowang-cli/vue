@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "serve:sit": "vue-cli-service serve --mode sit",
     "build": "vue-cli-service build",
+    "build:sit": "vue-cli-service build --mode sit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "element-plus": "^2.2.16",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -28,7 +32,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-vue": "^8.0.3",
+    "eslint-plugin-vue": "^7.0.0",
     "lint-staged": "^11.1.2",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
