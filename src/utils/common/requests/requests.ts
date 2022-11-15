@@ -3,7 +3,10 @@ import { ElMessage, ElMessageBox, ElNotification } from "element-plus"
 import { ErrorType } from "@/@types/enums/ResponseErrorType"
 
 const request = axios.create({
-  baseURL: process.env.VUE_APP_AXIOS_BASE_URL
+  baseURL: process.env.VUE_APP_AXIOS_BASE_URL,
+  headers: {
+    token: "15aea5f688f282f9d5b069f36e1eb9ff"
+  }
 })
 
 const handleResponseError = (type: ErrorType, message: string) => {
