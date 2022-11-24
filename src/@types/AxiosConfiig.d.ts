@@ -10,3 +10,10 @@ type Ret<T> = {
   data: T
   msg: string
 }
+
+type Page<T> = {
+  total: number
+  size: number
+  current: number
+  records: T[]
+}

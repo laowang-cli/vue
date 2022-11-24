@@ -5,7 +5,7 @@ import { ErrorType } from "@/@types/enums/ResponseErrorType"
 const request = axios.create({
   baseURL: process.env.VUE_APP_AXIOS_BASE_URL,
   headers: {
-    token: "15aea5f688f282f9d5b069f36e1eb9ff"
+    token: "12976b39ebd8f3fe02142b6996016070"
   }
 })
 
@@ -41,7 +41,7 @@ request.interceptors.response.use(response => {
 })
 
 export const requests = {
-  get: <T> (path: string, params?: Record<string, string>, config?: CustomRequestConfig): Promise<T> => {
+  get: <T> (path: string, params?: Record<string, any>, config?: CustomRequestConfig): Promise<T> => {
     return request.get(path, {
       params,
       ...config as any
@@ -50,5 +50,16 @@ export const requests = {
 
   post: <T> (path: string, data: Record<string, any>, config?: CustomRequestConfig): Promise<T> => {
     return request.post(path, data, config as any)
+  },
+
+  put: <T> (path: string, data: Record<string, any>, config?: CustomRequestConfig): Promise<T> => {
+    return request.put(path, data, config as any)
+  },
+
+  delete: <T> (path: string, params?: Record<string, any>, config?: CustomRequestConfig): Promise<T> => {
+    return request.delete(path, {
+      params,
+      ...config
+    })
   }
 }
